@@ -1,0 +1,9 @@
+services:
+  subtitle-desk:
+    build: .
+    image: subtitle-rhythm-desk:latest
+    container_name: subtitle-rhythm-desk
+    ports:
+      # 宿主机端口:容器端口。宿主机 8080 被占用时，修改冒号左侧即可
+      - "${HOST_PORT:-8080}:80"
+    restart: unless-stopped
